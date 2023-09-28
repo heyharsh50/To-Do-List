@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-list-app';
+  todoItems = [
+    { activity: 'Swimming', completed: false },
+    { activity: 'Breakfast', completed: false },
+    { activity: 'Office', completed: false },
+    { activity: 'Workout', completed: false },
+    { activity: 'Dinner', completed: false }
+  ];
+
+  newItem: string = '';
+
+  addItem() {
+    if (this.newItem.trim() !== '') {
+      this.todoItems.push({ activity: this.newItem, completed: false });
+      this.newItem = '';
+    }
+  }
+  swimmingVenue = 'Marena SMIT';
 }
